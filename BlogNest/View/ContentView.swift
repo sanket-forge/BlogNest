@@ -9,42 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @StateObject var viewModel = FeedViewModel()
+    
     let geners = ["Business", "Politics", "Health", "Food", "Lifestyle", "Travel"]
     
     var body: some View {
         
-        ZStack {
+        NavigationView {
             
             VStack(spacing: 20) {
                 
 //                Top bar:
-                
-                HStack(spacing: 170) {
-                    
-                    Text("BlogNest")
-                        .font(.title)
-                        .bold()
-                    
-                    HStack(spacing: 16) {
-                        
-                        Button(action: {}) {
-                            
-                            Image(systemName: "bookmark.circle")
-                                .foregroundColor(.black)
-                                .font(.title)
-                                .opacity(0.5)
-                        }
-                        
-                        Button(action: {}) {
-                            
-                            Image(systemName: "bell.circle")
-                                .foregroundColor(.black)
-                                .font(.title)
-                                .opacity(0.5)
-                        }
-                    }
-                }
-                
+         
 //                Scroll-View(Gener):
                 
                 ScrollView(.horizontal) {
@@ -79,8 +55,67 @@ struct ContentView: View {
                     .padding(.leading)
                     .padding(.trailing)
                 
-                
+                List {
+                    
+//                    ForEach will start here....
+                    
+                    VStack(alignment: .leading, spacing: 20) {
+                        
+                        VStack(alignment: .leading) {
+                            
+                            Text("Sanket Khatua")
+                                .font(.callout)
+                                .bold()
+                            
+                            Text("Tuesday, Sept. 23, 2025")
+                                .font(.footnote)
+                                .opacity(0.5)
+                        }
+                        
+                        VStack(alignment: .leading) {
+                            
+                            Text("This is the rough idea for the main feed i hope it will look good. And i think this look good enough hehehe. Fuck u bitch!!")
+                                .font(.headline)
+                        }
+                        
+                        HStack {
+                            
+                            HStack(spacing: 25) {
+                                
+                                Button(action: {}) {
+                                    
+                                    Image(systemName: "heart.fill")
+                                        .resizable()
+                                        .frame(width: 14, height: 14)
+                                        .foregroundColor(.black)
+                                        .opacity(0.5)
+                                }
+                                
+                                Button(action: {}) {
+                                    
+                                    Image(systemName: "paperplane.fill")
+                                        .resizable()
+                                        .frame(width: 14, height: 14)
+                                        .foregroundColor(.black)
+                                        .opacity(0.5)
+                                }
+                            }
+                            
+                            Spacer()
+                            
+                            Button(action: {}) {
+                                
+                                Image(systemName: "bookmark.fill")
+                                    .resizable()
+                                    .frame(width: 14, height: 14)
+                                    .foregroundColor(.black)
+                                    .opacity(0.5)
+                            }
+                        }
+                    }
+                }
             }
+            .navigationTitle("BlogNest")
         }
     }
 }
