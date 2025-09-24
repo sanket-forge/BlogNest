@@ -114,6 +114,83 @@ struct ContentView: View {
                         }
                     }
                 }
+                .listStyle(.plain)
+                
+//                Bottom Bar:
+                
+                Divider()
+                
+                Rectangle()
+                    .ignoresSafeArea()
+                    .frame(height: 45)
+                    .foregroundColor(.white)
+                    .overlay {
+                        
+                        HStack {
+                            
+                            HStack(spacing: 35) {
+                                
+                                Button(action: {}) {
+                                    
+                                    Image(systemName: "house.circle.fill")
+                                        .resizable()
+                                        .frame(width: 35, height: 35)
+                                        .foregroundColor(.black)
+                                        .opacity(0.5)
+                                }
+                                
+                                Button(action: {}) {
+                                    
+                                    Image(systemName: "bell.circle.fill")
+                                        .resizable()
+                                        .frame(width: 35, height: 35)
+                                        .foregroundColor(.black)
+                                        .opacity(0.5)
+                                }
+                            }
+                            
+                            Spacer()
+                            
+                            Button(action: {}) {
+                                
+                                Circle()
+                                    .frame(height: 80)
+                                    .foregroundColor(.brown)
+                                    .shadow(radius: 15)
+                                    .overlay {
+                                        
+                                        Image(systemName: "plus.circle")
+                                            .resizable()
+                                            .frame(width: 45, height: 45)
+                                            .foregroundColor(.white)
+                                    }
+                            }
+                            
+                            Spacer()
+                            
+                            HStack(spacing: 35) {
+                                
+                                Button(action: {}) {
+                                    
+                                    Image(systemName: "bookmark.circle.fill")
+                                        .resizable()
+                                        .frame(width: 35, height: 35)
+                                        .foregroundColor(.black)
+                                        .opacity(0.5)
+                                }
+                                
+                                Button(action: {}) {
+                                    
+                                    Image(systemName: "person.circle.fill")
+                                        .resizable()
+                                        .frame(width: 35, height: 35)
+                                        .foregroundColor(.black)
+                                        .opacity(0.5)
+                                }
+                            }
+                        }
+                        .padding(.all)
+                    }
             }
             .navigationTitle("BlogNest")
         }
