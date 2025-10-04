@@ -34,7 +34,8 @@ struct FeedView: View {
                                 Rectangle()
                                     .frame(width: 80, height: 40)
                                     .cornerRadius(50)
-                                    .opacity(0.05)
+                                    .foregroundColor(.cyan)
+                                    .opacity(0.25)
                                     .overlay {
                                         
                                         Text(gener)
